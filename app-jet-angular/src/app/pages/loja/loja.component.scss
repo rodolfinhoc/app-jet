@@ -1,0 +1,41 @@
+.card {
+  max-width: 200px;
+  margin: 20px;
+}
+
+.btn{
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.image-avaliation{
+  width: 85px;
+  height: 20px;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.old-price{
+  text-decoration: line-through;
+  padding: 10px;
+}
+
+.text-align{
+  text-align: center;
+}
+
+.image{
+  width: 200px !important;
+  height: 145px !important;
+}
+
+.flex{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.padding {
+  padding: 22px;
+}

@@ -1,0 +1,30 @@
+<div class="centering-div">
+<mat-card>
+    <img src="../../../assets/images/logo-login.png">
+    <form (ngSubmit)="login()" class="forms" #form="ngForm">
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Usuário</mat-label>
+            <input type="text" matInput [formControl]="loginForm.username" placeholder="Ex. rodolfo_correia">
+            <mat-error *ngIf="loginForm.username.hasError('required')">
+                Usuário é <strong>obrigatório</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input [formControl]="loginForm.password" matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button type="button" matSuffix (click)="hide = !hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+            <mat-error *ngIf="!loginForm.password.hasError('required')">
+                Minimo 8 Caracteres
+            </mat-error>
+            <mat-error *ngIf="loginForm.password.hasError('required')">
+                Senha é <strong>obrigatória</strong>
+            </mat-error>
+        </mat-form-field>
+        <div class="btnLogin">
+            <button mat-raised-button type="submit" class="btn" [class.spinner]="loading" [disabled]="loading">Login</button>
+        </div>
+    </form>
+</mat-card>
+</div>

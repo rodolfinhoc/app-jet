@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{titulo}}</h1>
+<mat-dialog-content>
+  <div class="prices">
+  <p class="new-price"><b>R${{preco_promocao}}</b> <a class="old-price"> R${{preco}}</a></p>
+  </div>
+  <img src="{{imagem}}" class="image">
+  <div class="descricao">
+    <p>Detalhes: <br>{{descricao}}</p>
+    </div>
+
+  <div class="estoque">
+    <p>Qtde. Estoque: {{estoque}}</p>
+  </div>
+
+<div class="button">
+  <button mat-raised-button color="warn">Adicionar ao Carrinho</button>
+</div>
+</mat-dialog-content>

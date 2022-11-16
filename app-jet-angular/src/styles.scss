@@ -1,0 +1,133 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$login-primary: mat-palette($mat-grey, 800, 700, 900);
+$login-accent: mat-palette($mat-pink);
+$login-warn: mat-palette($mat-red);
+$login-theme: mat-light-theme($login-primary, $login-accent, $login-warn);
+//dark theme
+$login-primary: mat-palette($mat-grey, 800, 700, 900);
+$login-accent: mat-palette($mat-pink);
+$login-warn: mat-palette($mat-red);
+$login-theme-dark: mat-dark-theme($login-primary, $login-accent, $login-warn);
+//** CUSTOM COLORS **//
+:root {
+    --primary: #ff0000;
+    --primary-title: #fff;
+    --secondary: #e2e5e7;
+    --secondary-dark: #343a40;
+    --background: #e9ebec;
+    --color: #7d858c;
+    --background-dark: #292c35;
+    --color-dark: #fff;
+    --background-dark-black: #212121;
+    --white-smoke: whitesmoke;
+    --black: black;
+}
+
+.light-mode {
+    @include angular-material-theme($login-theme);
+    background: var(--background);
+    color: var(--color);
+    .btn {
+        background: var(--primary);
+        color: var(--primary-title);
+    }
+    .titleMenu {
+        color: var(--primary);
+        background: var(--secondary);
+        border-bottom: 1px solid var(--primary);
+        border-top: 1px solid var(--primary);
+    }
+    .endSidenav {
+        background: var(--secondary);
+    }
+    .sidenav {
+        background: var(--background);
+    }
+    .sidenav-container {
+        background: var(--secondary);
+    }
+    .contentEndSide {
+        background: var(--secondary);
+    }
+    .toolbar {
+        background: var(--secondary);
+        border-bottom: 1px solid var(--primary);
+    }
+    .mat-tree {
+        background: var(--background);
+    }
+    tr.example-element-row:not(.example-expanded-row):hover {
+        background: var(--white-smoke);
+    }
+    tr.example-element-row:not(.example-expanded-row):active {
+        background: var(--background);
+    }
+    th.mat-sort-header-sorted {
+        color: var(--black);
+    }
+}
+
+.dark-mode {
+    @include angular-material-theme($login-theme-dark);
+    background: var(--background-dark);
+    color: var(--color-dark);
+    .btn {
+        background: var(--primary);
+        color: var(--primary-title);
+    }
+    .titleMenu {
+        color: var(--primary);
+        background: var(--background-dark-black);
+        border-bottom: 1px solid var(--primary);
+        border-top: 1px solid var(--primary);
+    }
+    .endSidenav {
+        background: var(--background-dark-black);
+    }
+    .sidenav {
+        // border-right: 1px solid var(--primary);
+        background: var(--secondary-dark);
+    }
+    .sidenav-container {
+        background: var(--secondary-dark);
+    }
+    .contentEndSide {
+        background: var(--secondary-dark);
+    }
+    .toolbar {
+        border-bottom: 1px solid var(--primary);
+    }
+    .mat-tree {
+        background: var(--secondary-dark);
+    }
+    tr.example-element-row:not(.example-expanded-row):hover {
+        background: var(--primary);
+    }
+    tr.example-element-row:not(.example-expanded-row):active {
+        background: var(--background);
+    }
+    th.mat-sort-header-sorted {
+        color: var(--black);
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    // font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-body,
+.mat-body-1,
+.mat-typography {
+    font: 400 16px / 20px Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+.pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,44 @@
+.image{
+  width: 400px !important;
+  height: 400px !important;
+  box-shadow: 3px 3px 10px #ccc;
+}
+
+.prices{
+  position: absolute;
+  margin-left: 415px;
+  margin-top: 10px;
+}
+
+.new-price{
+  font-size: 25px;
+}
+
+.old-price{
+  text-decoration: line-through;
+  font-size: 16px;
+}
+
+.descricao {
+  text-align: justify;
+  text-justify: inter-word;
+  position: absolute;
+  margin-left: 420px;
+  margin-top: -340px;
+}
+
+.estoque {
+  text-align: justify;
+  text-justify: inter-word;
+  position: absolute;
+  margin-left: 420px;
+  margin-top: -25px;
+}
+
+.button {
+  text-align: justify;
+  text-justify: inter-word;
+  position: absolute;
+  margin-left: 630px;
+  margin-top: -38px;
+}

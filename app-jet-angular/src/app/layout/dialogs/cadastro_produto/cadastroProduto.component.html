@@ -1,0 +1,82 @@
+<header>
+    <div class="viewer-title">
+        <div class="title">Cadastro Produto</div>
+        <button mat-icon-button class="close" (click)="close()">
+          <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</header>
+
+<div mat-dialog-content>
+  <form (ngSubmit)="salvar()" class="forms" [formGroup]="cadastroProdutoForm">
+    <h4>Informações Principais</h4>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="5" rowHeight="100px">
+      <!-- STATUS -->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-slide-toggle formControlName="status">Status</mat-slide-toggle>
+      </mat-grid-tile>
+
+      <!-- NOME -->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label mat-label>Nome do Produto</mat-label>
+            <input type="text" matInput formControlName="nome">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <!-- ESTOQUE -->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label mat-label>Estoque</mat-label>
+            <input type="number" matInput formControlName="estoque">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <!-- PREÇO -->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label mat-label>Preço</mat-label>
+            <input type="number" matInput formControlName="preco" pattern="[0-9]+([,\.][0-9]+)?" >
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <!-- PREÇO PROMOCIONAL -->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label mat-label>Preço Promocional</mat-label>
+            <input type="number" matInput formControlName="preco_promocao" pattern="[0-9]+([,\.][0-9]+)?" >
+        </mat-form-field>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+    <h4>Informações Adicionais</h4>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="5" rowHeight="100px">
+      <!-- DESCRIÇÃO -->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="form-field" appearance="fill">
+          <mat-label mat-label>Breve Descrição</mat-label>
+          <textarea matInput formControlName="descricao" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="2"></textarea>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <h4>Imagens</h4>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="5" rowHeight="50px">
+    <!-- IMAGENS -->
+      <mat-grid-tile [colspan]="" [rowspan]="1">
+    <input name="imageUrl" type="file" accept="image/*" #fileInput (change)="onFileChange()" ng2FileSelect [uploader]="fileUploader" />
+      <a *ngFor="let item of fileUploader.queue">
+          <mat-icon (click)="removeFile(item)" color="danger">close</mat-icon>
+      </a>
+  </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-divider></mat-divider>
+  <pre></pre>
+    <button mat-raised-button type="submit" class="btn" [class.spinner]="loading" [disabled]="cadastroProdutoForm.invalid">Salvar</button>
+</form>
+</div>

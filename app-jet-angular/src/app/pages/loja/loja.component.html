@@ -1,0 +1,24 @@
+<div class="padding">
+<div class="flex">
+<mat-card *ngFor="let produto of dados" class="card">
+  <mat-card-header>
+    <div class="text-align">
+    <mat-card-title>{{produto.nome}}</mat-card-title>
+  </div>
+  </mat-card-header>
+  <img mat-card-image src="{{produto.imagem}}" class="image">
+  <mat-card-content>
+    <div class="text-align">
+      <p>{{produto.descricao}}</p>
+    </div>
+    <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Star_rating_3.5_of_5.png/800px-Star_rating_3.5_of_5.png?20160511144412" class="image-avaliation">
+    <div class="text-align">
+      <a><b>R${{produto.preco_promocao}}</b> <a class="old-price"> R${{produto.preco}}</a></a>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" class="btn" (click)="visualizar(produto.codigo)">Visualizar</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+</div>

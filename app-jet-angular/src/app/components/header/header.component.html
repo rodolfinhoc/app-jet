@@ -1,0 +1,32 @@
+<div class="container" [class.is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+        <span class="spacer"></span>
+        <mat-slide-toggle (click)="darkMode()" [(ngModel)]="darkTheme" [color]="'warn'"></mat-slide-toggle>
+        <button mat-button [matMenuTriggerFor]="accountMenu"><mat-icon>account_circle</mat-icon></button>
+        <mat-menu #accountMenu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="sair()">
+              <mat-icon>logout</mat-icon>
+              Logout
+            </button>
+        </mat-menu>
+
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav class="sidenav" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+          <mat-action-list>
+            <button mat-list-item [routerLink]="['/home']"><mat-icon class="list">home</mat-icon> &nbsp; Home </button>
+            <button mat-list-item [routerLink]="['/produtos']"><mat-icon class="list">shopping_cart</mat-icon> &nbsp; Produtos </button>
+            <button mat-list-item [routerLink]="['/loja']"><mat-icon class="list">shopping_basket</mat-icon> &nbsp; Loja </button>
+          </mat-action-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content class="sidenav-content">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

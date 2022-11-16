@@ -1,0 +1,72 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.is-mobile .toolbar {
+    position: fixed;
+    z-index: 2;
+}
+
+.sidenav-container {
+    flex: 1;
+}
+
+.is-mobile .sidenav-container {
+    flex: 1 0 auto;
+}
+
+.sidenav {
+    min-width: 300px;
+}
+
+.is-mobile .sidenav {
+    min-width: none;
+}
+
+.nav-list {
+    text-align: center;
+}
+
+.is-mobile .nav-list {
+    text-align: center;
+}
+
+.sidenav-content {
+    margin-top: 10px;
+}
+
+.is-mobile .sidenav-content {
+    margin-top: 10px;
+}
+
+.titleMenu {
+    padding: 0.75rem 0rem;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.button-MatTree {
+    padding-left: 16px;
+    border-radius: 0%;
+}
+
+.sidenav-content {
+    overflow-x: clip !important;
+}
+
+.list{
+  margin-left: 8px;
+}

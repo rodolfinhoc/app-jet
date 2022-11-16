@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.padding{
+  padding: 20px !important;
+}
+
+.example-button-container{
+  z-index: 9999 !important;
+  position:absolute;
+  bottom:15px;
+  right:15px;
+}
+
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}

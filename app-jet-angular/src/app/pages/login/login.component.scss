@@ -1,0 +1,98 @@
+.example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+.btn {
+    width: 80%;
+    background: (--primary);
+    text-transform: uppercase !important;
+}
+
+.tabGroup {
+    color: lime;
+}
+
+mat-card {
+    background: white;
+    text-align: center;
+    border-style: groove;
+    border-color: #ff0000;
+    border-width: 2px;
+}
+
+img {
+  width: 100%;
+}
+
+.btnLogin {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.forms {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-field {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.novaSenha {
+    display: block;
+    text-align: end;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.novaSenha:hover {
+    color: #ff0000;
+}
+
+  /* For Mobile Portrait View */
+  @media screen and (min-width: 1140px) {
+    .centering-div {
+      max-width: 500px;
+      width: calc(250px + 100vw - 1024px);
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  .centering-div {
+    width: 100%;
+  }
+}
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-top-color: #000000;
+  animation: spinner .8s linear infinite;
+}
